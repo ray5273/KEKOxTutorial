@@ -15,12 +15,12 @@ Neural style transfer는 컨텐츠 이미지, 스타일 참조용 이미지(마�
 예를 들어, 밑에 Katsushika Hokusai의 *The Great Wave off kanagawa*
 라는 작품과 거북이 이미지가 있습니다.:
 
-![Image of Green Sea Turtle and The Great Wave Off Kanagawa](media/15_1.png)
+![Image of Green Sea Turtle and The Great Wave Off Kanagawa](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_1.png)
 녹색 바다 거북이 (P. Lindgren, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Green_Sea_Turtle_grazing_seagrass.jpg)) 
 
 Hokusai 이미지에서 파도의 질감과 스타일을 거북이 이미지에 추가한다면 어떻게 보일까요? 마치 이것처럼 보일까요?
 
-![Neural style output image](media/15_2.png)
+![Neural style output image](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_2.png)
 
 이건 마술, 아니면 그저 딥러닝일까요? 다행히도, 어떠한 마술도 들어가 있지 않습니다 : style transfer는 신경망 내부의 표현과 기능을 보여주는 재밌고 흥미로운 기술입니다.
 
@@ -82,7 +82,7 @@ neural style transfer의 원리는 2가지 다른 함수를 정의하는 것으�
 > [show_images.py](https://gist.github.com/raymond-yuan/dee15872cb18e628ad7bd984a7411d2c#file-show_images-py) 를 통해 볼 수 있습니다.
 
 
-![Image of Green Sea Turtle and The Great Wave Off Kanagawa](media/15_3.png)
+![Image of Green Sea Turtle and The Great Wave Off Kanagawa](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_3.png)
   Image of Green Sea Turtle -By P .Lindgren from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Green_Sea_Turtle_grazing_seagrass.jpg) and Image of The Great Wave Off Kanagawa from by Katsushika Hokusai [Public Domain](https://commons.wikimedia.org/wiki/File:The_Great_Wave_off_Kanagawa.jpg)
 
 
@@ -157,7 +157,7 @@ def get_model():
 
 좀 더 수식화하면, 콘텐츠 손실 함수는 입력 이미지 x와 컨텐츠 이미지 p, 두 이미지 사이의 거리를 설명합니다. Cₙₙ을 미리 학습된 깊은 CNN라고 합시다. 즉, [VGG19](https://keras.io/applications/#vgg19)를 사용합니다. X는 어떤 이미지이고 Cₙₙ(X)를 X를 전달받는 신경망이라고 합시다. Fˡᵢⱼ(x)∈ Cₙₙ(x)와 Pˡᵢⱼ(x) ∈ Cₙₙ(x) 는 l 레이어에서 x, p 입력을 갖는 신경망의 각각의 중간 피쳐 표현들이라고 합시다. 그런 다음 컨텐츠 거리(손실)을 수식화하면 아래와 같습니다.
 
-![콘텐츠 손실 함수](media/15_10.png)
+![콘텐츠 손실 함수](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_10.png)
 
 이러한 콘텐츠 손실을 최소화하기 위해 일반 방식으로 역전파(backpropagation)을 수행합니다. 따라서 특정 레이어(content_layer에 정의된)에서 원본 컨텐츠 이미지로 유사한 반응을 생성할 때까지 초기 이미지를 변화시킵니다.
 
@@ -177,15 +177,15 @@ def get_model():
 
 #### Style fransfer 절차를 실행, 적용
 
-![학습 과정 간의 변화](media/15_4.png)
+![학습 과정 간의 변화](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_4.png)
 
-![신경 스타일 결과물](media/15_5.png)
+![신경 스타일 결과물](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_5.png)
 
-![변화 과정](media/15_6.gif)
+![변화 과정](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_6.gif)
 
-![고흐 스타일 적용](media/15_7.png)
-![칸딘스키 스타일 적용](media/15_8.png)
-![허블 적용](media/15_9.png)
+![고흐 스타일 적용](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_7.png)
+![칸딘스키 스타일 적용](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_8.png)
+![허블 적용](https://raw.githubusercontent.com/KerasKorea/KEKOxTutorial/issue_15/media/15_9.png)
 
 ### 주요 요점들
 
